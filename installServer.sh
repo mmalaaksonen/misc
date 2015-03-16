@@ -2,6 +2,8 @@
 sudo sh
 apt-get install git openjdk-7-jre tar curl
 
+clear
+
 echo '---------------------------------------------'
 echo 'All files and subdirectories'
 echo 'in this directory will be DESTROYED'
@@ -12,7 +14,7 @@ if [ "_$REPLY" = "_y" ]; then
     rm -r !(installServer.sh)
 else
     echo '(cancelled)'
-    exit
+    rm installServer.sh
 fi
 
 curl -o BuildTools.jar https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
