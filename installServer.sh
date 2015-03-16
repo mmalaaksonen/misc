@@ -13,7 +13,7 @@ if [ "_$REPLY" = "_y" ]; then
     rm -r !(installServer.sh)
 else
     echo '(cancelled)'
-    rm installServer.sh
+    exit
 fi
 
 curl -o BuildTools.jar https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
@@ -29,6 +29,4 @@ chmod +x start.sh
 shopt -s extglob
 rm -r !(installServer.sh|server.jar|start.sh)
 
-xterm -e ./start.sh
-
-rm installServer.sh
+read -p "Open start.sh through a terminal to start server."
