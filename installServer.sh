@@ -30,3 +30,5 @@ shopt -s extglob
 rm -r !(installServer.sh|server.jar|start.sh)
 
 read -p "Open start.sh through a terminal to start server."
+
+rm installServer.sh
