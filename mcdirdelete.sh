@@ -10,3 +10,4 @@ if [ "_$REPLY" = "_y" ]; then
 else
     echo '(cancelled)'
 fi
+exit
