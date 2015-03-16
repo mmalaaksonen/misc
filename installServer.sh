@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo sh
 apt-get install git openjdk-7-jre tar curl
 
 clear
