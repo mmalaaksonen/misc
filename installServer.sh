@@ -2,8 +2,18 @@
 sudo sh
 apt-get install git openjdk-7-jre tar curl
 
-curl -o del3314.sh https://raw.githubusercontent.com/mmalaaksonen/misc/master/mcdirdelete.sh
-xterm -e ./del3314.sh
+echo '---------------------------------------------'
+echo 'All files and subdirectories'
+echo 'in this directory will be DESTROYED'
+echo '--------------------------!!!!!!!!!----------'
+echo 'Do you want to proceed [y/n]? ' | tr -d '\012' ; read
+if [ "_$REPLY" = "_y" ]; then
+    shopt -s extglob
+    rm -r !(installServer.sh)
+else
+    echo '(cancelled)'
+    exit
+fi
 
 curl -o BuildTools.jar https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 git config --global --unset core.autocrlf
